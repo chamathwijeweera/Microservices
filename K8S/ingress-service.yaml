@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-service
+  namespace: ch-micro-service
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: era.com
+      http:
+        paths:
+          - path: /api/platform/v1/platforms
+            pathType: Prefix
+            backend:
+              service:
+                name: platform-cluster-service
+                port:
+                  number: 80
+          - path: /api/command/v1/commands
+            pathType: Prefix
+            backend:
+              service:
+                name: commands-cluster-service
+                port:
+                  number: 80
