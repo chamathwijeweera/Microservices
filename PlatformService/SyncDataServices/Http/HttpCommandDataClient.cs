@@ -19,7 +19,7 @@ namespace PlatformService.SyncDataServices.Http
         public async Task SendPlatformToCommand(PlatformReadDto platform)
         {
             var httpContent = new StringContent(JsonSerializer.Serialize(platform), Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync($"{configuration["CommandServiceUrl"]}/api/command/v1/platforms", httpContent);
+            var response = await httpClient.PostAsync($"{configuration["CommandServiceUrl"]}/api/command/platforms", httpContent);
             if (response.IsSuccessStatusCode)
                 Console.WriteLine("Sync POST to CommandService successful.");
             else
