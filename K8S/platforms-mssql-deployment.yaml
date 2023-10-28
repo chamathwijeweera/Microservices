@@ -39,7 +39,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mssql-cluster-service
+  name: mssql-clusterip-service
   namespace: ch-micro-service
 spec:
   type: ClusterIP

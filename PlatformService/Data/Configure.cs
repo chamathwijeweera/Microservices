@@ -21,9 +21,9 @@ namespace PlatformService.Data
                     Console.WriteLine("Migrating database...");
                     dbContext.Database.EnsureCreated();
                 }
-                catch (System.Exception ex)
+                catch (Exception ex)
                 {
-                    System.Console.WriteLine(ex.Message);
+                    Console.WriteLine(ex.Message);
                     throw;
                 }
             }
