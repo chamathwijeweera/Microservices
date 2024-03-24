@@ -52,7 +52,7 @@ namespace PlatformService.Controllers
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"Could not send synchronously: {ex.Message}");
+                Console.WriteLine($"--> Could not send synchronously: {ex.Message}");
             }
             return CreatedAtRoute(nameof(GetPlatformById), new { model.Id }, platformReadDto);
         }

@@ -41,7 +41,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 Configure.ConfigureDatabase(app, app.Environment.IsProduction());
-Console.WriteLine($"CommandService Endpoint - {builder.Configuration.GetValue<string>("CommandServiceUrl")}");
+Console.WriteLine($"--> CommandService Endpoint - {builder.Configuration.GetValue<string>("CommandServiceUrl")}");
 app.Run();
 
 

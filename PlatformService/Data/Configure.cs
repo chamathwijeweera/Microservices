@@ -18,7 +18,7 @@ namespace PlatformService.Data
             {
                 try
                 {
-                    Console.WriteLine("Migrating database...");
+                    Console.WriteLine("--> Migrating database");
                     dbContext.Database.EnsureCreated();
                 }
                 catch (Exception ex)
@@ -30,7 +30,7 @@ namespace PlatformService.Data
             var platformsAvailable = dbContext.Platforms.Any();
             if (!platformsAvailable)
             {
-                System.Console.WriteLine("Seeding data...");
+                System.Console.WriteLine("--> Seeding data");
                 dbContext.Platforms.AddRange(
                     new Platform { Name = ".Net Core", Publisher = "Microsoft", Cost = "Free" },
                     new Platform { Name = "Docker", Publisher = "Docker", Cost = "Free" },
